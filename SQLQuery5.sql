@@ -1,0 +1,12 @@
+SELECT TOP 5 Name, Capital FROM [SQL].[dbo].[Countries] ORDER BY Area DESC;
+SELECT Name FROM [SQL].[dbo].[Countries] WHERE Continent = 'Африка' AND Population <= 1000000;
+SELECT Name FROM [SQL].[dbo].[Countries] WHERE Population > 5000000 AND Area < 100000 AND Continent <> 'Европа';
+SELECT Name FROM [SQL].[dbo].[Countries] WHERE (Continent IN ('Северная Америка', 'Южная Америка') AND Population > 20000000) OR (Continent = 'Африка' AND Population > 30000000);
+SELECT Name FROM [SQL].[dbo].[Countries] WHERE Population BETWEEN 10000000 AND 100000000 AND Area <= 500000;
+SELECT Name FROM [SQL].[dbo].[Countries] WHERE Name NOT LIKE 'К%';
+SELECT Name FROM [SQL].[dbo].[Countries] WHERE Name LIKE '__а%' AND Name LIKE '%и_';
+SELECT Name FROM [SQL].[dbo].[Countries] WHERE Name LIKE '_[АЕЁИОУЫЭЮЯ]%';
+SELECT Name FROM [SQL].[dbo].[Countries] WHERE Name >= 'К' AND Name < 'Р';
+SELECT Name FROM [SQL].[dbo].[Countries] WHERE (Name >= 'А' AND Name < 'К') AND Name NOT LIKE 'Б%';
+SELECT DISTINCT Name FROM [SQL].[dbo].[Countries] WHERE Capital IS NOT NULL;
+SELECT Name FROM [SQL].[dbo].[Countries] WHERE Continent IN ('Африка', 'Северная Америка', 'Южная Америка');

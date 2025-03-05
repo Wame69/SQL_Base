@@ -1,0 +1,15 @@
+SELECT Name,Capital,Area,Population,Continent FROM [SQL].[dbo].[Countries] WHERE Area > 1000000;
+SELECT Name,Capital,Area,Population,Continent FROM [SQL].[dbo].[Countries] WHERE Population !> 1000000;
+SELECT Name,Capital,Area,Population,Continent FROM [SQL].[dbo].[Countries] WHERE Continent > 'Африка';
+SELECT Name,Capital,Area,Population,Continent FROM [SQL].[dbo].[Countries] WHERE Continent !> 'Европа';
+SELECT Name,Capital,Area,Population,Continent FROM [SQL].[dbo].[Countries] WHERE (Population > 1000000) AND (Area < 100000);
+SELECT Name,Capital,Area,Population,Continent FROM [SQL].[dbo].[Countries] WHERE (Continent > 'Европа') AND (Population > 100000) OR (Continent > 'Азия') AND (Population > 50000000);
+SELECT Name,Capital,Area,Population,Continent FROM [SQL].[dbo].[Countries] WHERE (Population BETWEEN 10000000 AND 10000000) AND (Area >= 100000) AND (Area <= 200000);
+SELECT Name,Capital,Area,Population,Continent FROM [SQL].[dbo].[Countries] WHERE Name BETWEEN 'Бенин' AND 'Ватикан' ORDER BY Name;
+SELECT Name,Capital,Area,Population,Continent FROM [SQL].[dbo].[Countries] WHERE Name LIKE'С%';
+SELECT Name,Capital,Area,Population,Continent FROM [SQL].[dbo].[Countries] WHERE Name LIKE'_а%я';
+SELECT Name,Capital,Area,Population,Continent FROM [SQL].[dbo].[Countries] WHERE Name LIKE'_[аоу]%';
+SELECT Name,Capital,Area,Population,Continent FROM [SQL].[dbo].[Countries] WHERE Name LIKE'[А-Г]%';
+SELECT Name,Capital,Area,Population,Continent FROM [SQL].[dbo].[Countries] WHERE Name LIKE'[^А-Г,^С]%';
+SELECT Name,Capital,Area,Population,Continent FROM [SQL].[dbo].[Countries] WHERE Capital IS NULL;
+SELECT Name,Capital,Area,Population,Continent FROM [SQL].[dbo].[Countries] WHERE Continent IN ('Европа','Азия','Африка');
