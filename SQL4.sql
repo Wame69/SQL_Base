@@ -1,0 +1,12 @@
+SELECT MIN(area) AS Min_Area FROM Countries;
+SELECT TOP 1 name, population FROM Countries WHERE continent IN ('Северная Америка', 'Южная Америка') ORDER BY population DESC;
+SELECT ROUND(AVG(CAST(population AS FLOAT)), 1) AS Avg_Population FROM Countries;
+SELECT COUNT(*) AS Country_Count FROM Countries WHERE name LIKE '%ия' AND name NOT LIKE '%ания';
+SELECT COUNT(DISTINCT continent) AS Continent_Count FROM Countries WHERE name LIKE 'Р%';
+SELECT MAX(area) - MIN(area) AS Area_Difference FROM Countries;
+SELECT continent, COUNT(*) AS Country_Count FROM Countries WHERE population > 100000000 GROUP BY continent ORDER BY Country_Count ASC;
+SELECT LEN(name) AS Name_Length, COUNT(*) AS Country_Count FROM Countries GROUP BY LEN(name) ORDER BY Country_Count DESC;
+SELECT continent, SUM(FLOOR(population * 1.1)) AS Projected_Population FROM Countries GROUP BY continent;
+SELECT continent FROM Countries GROUP BY continent HAVING MAX(area) - MIN(area) <= 10000;
+SELECT AVG(LEN(name)) AS Avg_Name_Length FROM Countries WHERE continent = 'Африка';
+SELECT continent FROM Countries WHERE population > 1000000 GROUP BY continent HAVING AVG(CAST(population AS FLOAT) / area) > 30;
